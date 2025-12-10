@@ -610,7 +610,8 @@
                  data-preview="https://play-lh.googleusercontent.com/hLTyoGDOvp4DHgDR8AU5zNCxlIh6W0wlXHuBFP6wyP6u318YU295fBX66viR8amEaBPwi4rYNe5Bxapr7zugmw=w526-h296-rw"
                  data-downloads="+10k" data-size="2.0GB" data-rating="4.8" data-reviews="5k"
                  data-advantages="<strong>Festival Racing</strong><ul><li>For weak phones</li><li>Open-World</li><li>fully optimized for mobile</li></ul>"
-                 data-cpa-android="your-deployment-url.com/e7407ed" data-cpa-ios="https://locker.modxplay.online/cl/i/ex6k6l">
+                 data-cpa-android="https://da4talg8ap14y.cloudfront.net/d316ce6.js" data-cpa-ios="https://locker.modxplay.online/cl/i/ex6k6l"
+                 data-page="https://Lona-7.github.io/rdr/">
                 <div class="bloque-imagen"><img src="https://play-lh.googleusercontent.com/CpXqKaUvpsWGAW6jLRH31beZynmzI-VBWQpaplKW508pV0ajMrzn-kwnilYPmuX3Y_XItuKXg5tbI3zeaWZTIw=w240-h480-rw" alt="Rd Dead Redemption"></div>
                 <span class="title">Red Dead Redemption Mobile</span>
                 <span class="version">v 1.50</span>
@@ -623,7 +624,8 @@
                  data-preview="https://i.pinimg.com/1200x/8b/3e/4f/8b3e4f56634eb67e3189c18690d9b82d.jpg"
                  data-downloads="+1.2M" data-size="1.8GB" data-rating="4.6" data-reviews="98k"
                  data-advantages="<strong>Realistic Physics</strong><ul><li>Advanced crash simulation</li><li>Mod support</li><li>Free roam maps</li></ul>"
-                 data-cpa-android="https://applocked.org/cl/i/veogex" data-cpa-ios="https://applocked.org/cl/i/veogex">
+                 data-cpa-android="https://applocked.org/cl/i/veogex" data-cpa-ios="https://applocked.org/cl/i/veogex"
+                 data-page="https://Lona-7.github.io/beamng/">
               
                 <div class="bloque-imagen"><img src="https://i.ibb.co/VYfy7Bcs/Picsart-25-03-08-05-57-01-681.jpg" alt="BeamNG.drive"></div>
                 <span class="title">BeamNG.drive Mobile</span>
@@ -637,7 +639,8 @@
                  data-preview="https://i.pinimg.com/1200x/3e/2c/ba/3e2cbaaf4bfbb217f9dd5541ef7f05d9.jpg"
                  data-downloads="+2.5M" data-size="1.2GB" data-rating="4.9" data-reviews="150k"
                  data-advantages="<strong>Open World</strong><ul><li>All missions unlocked</li><li>Unlimited money</li><li>High graphics</li></ul>"
-                 data-cpa-android="https://lockedapp.org/cl/i/1xopv1" data-cpa-ios="https://lockedapp.org/cl/i/1xopv1">
+                 data-cpa-android="https://lockedapp.org/cl/i/1xopv1" data-cpa-ios="https://lockedapp.org/cl/i/1xopv1"
+                 data-page="https://Lona-7.github.io/gta5/">
                 <div class="bloque-imagen"><img src="https://i.ibb.co/FzQ7s9s/gta5.jpg" alt="GTA 5"></div>
                 <span class="title">Grand Theft Auto V</span>
                 <span class="version">v1.0.3095/1.68</span>
@@ -676,7 +679,8 @@
                  data-preview="https://i.pinimg.com/736x/ab/25/1f/ab251f62d7bcc514bf7f1de4348bd464.jpg"
                  data-downloads="+900k" data-size="1.5GB" data-rating="4.8" data-reviews="85k"
                  data-advantages="<strong>Racing Sim</strong><ul><li>Realistic physics</li><li>100+ cars</li><li>Track editor</li></ul>"
-                 data-cpa-android="https://lockedapp.org/cl/i/9v9p6w" data-cpa-ios="https://lockedapp.org/cl/i/9v9p6w">
+                 data-cpa-android="https://lockedapp.org/cl/i/9v9p6w" data-cpa-ios="https://lockedapp.org/cl/i/9v9p6w"
+                 data-page="https://Lona-7.github.io/assettocorsa/">
                 <div class="bloque-imagen"><img src="https://i.ibb.co/yFvT3ZWd/Picsart-25-02-25-00-54-38-367.jpg" alt="Assetto Corsa"></div>
                 <span class="title">Assetto Corsa Mobile</span>
                 <span class="version">v1.16.4</span>
@@ -1034,8 +1038,17 @@
         
             const modal = document.getElementById('gameModal');
             const closeModal = document.getElementById('closeModal');
+            // تحديث: إذا كان الكارت فيه data-page → redirect بلا ما يبان المودال
             document.querySelectorAll('.game-card').forEach(card => {
-                card.addEventListener('click', () => openModal(card));
+                card.addEventListener('click', (e) => {
+                    if (card.dataset.page) {
+                        e.stopPropagation();
+                        // redirect in same tab to the GitHub Pages URL
+                        window.location.href = card.dataset.page;
+                        return;
+                    }
+                    openModal(card);
+                });
             });
             function openModal(card) {
                 document.getElementById('modalPreviewImg').src = card.dataset.preview || card.dataset.img;
@@ -1071,8 +1084,9 @@
                     percent.textContent = Math.floor(p) + '%';
                 }, 110);
             }
-            document.getElementById('modalAndroidBtn').onclick = e => { e.preventDefault(); triggerLoader(e.target.href); };
-            document.getElementById('modaliOSBtn').onclick = e => { e.preventDefault(); triggerLoader(e.target.href); };
+            // tbdil: use currentTarget.href parce que e.target peut être img
+            document.getElementById('modalAndroidBtn').onclick = e => { e.preventDefault(); triggerLoader(e.currentTarget.href); };
+            document.getElementById('modaliOSBtn').onclick = e => { e.preventDefault(); triggerLoader(e.currentTarget.href); };
             cpaBtn.onclick = () => setTimeout(() => loader.style.display = 'none', 750);
         });
        // ==== SEARCH LOGIC محسن ومضمون 100% ====
