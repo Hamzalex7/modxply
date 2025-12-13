@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,19 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Download GTA 5 Mobile - Experience the full Grand Theft Auto V experience on your smartphone. Get it now on Android and iOS at ModXplay.online.">
-    <meta name="keywords" content="GTA 5 Mobile, modded games, mobile games, modxplay.online, download games">
-    <meta property="og:title" content="GTA 5 Mobile - ModXplay.online">
-    <meta property="og:description" content="Download the latest modded version of GTA 5 Mobile. Explore the vast open world of Los Santos on your smartphone via ModXplay.online.">
+    <meta name="description" content="Download GTA 5 Mobile - Experience the full Grand Theft Auto V experience on your smartphone. Get it now on Android and iOS.">
+    <meta name="keywords" content="GTA 5 Mobile, modded games, mobile games, modlify.fun, download games">
+    <meta property="og:title" content="GTA 5 Mobile - Modlify.fun">
+    <meta property="og:description" content="Download the latest modded version of GTA 5 Mobile. Explore the vast open world of Los Santos on your smartphone.">
     <meta property="og:image" content="https://i.ibb.co/nsqFbZYX/5ea17-15973837610273-800-2025-02-24-T200151-466.jpg">
-    <meta property="og:url" content="https://www.modxplay.online/gta5-mobile">
+    <meta property="og:url" content="https://www.modlify.fun/gta5-mobile">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="GTA 5 Mobile - ModXplay.online">
-    <meta name="twitter:description" content="Download the latest modded version of GTA 5 Mobile. Explore the vast open world of Los Santos on your smartphone via ModXplay.online.">
+    <meta name="twitter:title" content="GTA 5 Mobile - Modlify.fun">
+    <meta name="twitter:description" content="Download the latest modded version of GTA 5 Mobile. Explore the vast open world of Los Santos on your smartphone.">
     <meta name="twitter:image" content="https://i.ibb.co/nsqFbZYX/5ea17-15973837610273-800-2025-02-24-T200151-466.jpg">
-    <meta name="author" content="ModXplay.online">
+    <meta name="author" content="Modlify.fun">
     <link rel="icon" href="https://i.ibb.co/gbsY945Q/Black-and-Green-Illustrative-E-Sports-Gaming-Logo-2-removebg.png">
-    <title>GTA 5 Mobile - ModXplay.online</title>
+    <title>GTA 5 Mobile - Modlify.fun</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -67,28 +69,24 @@
             margin: 0 auto;
         }
 
-        /* Updated Back to Home Button (BeamNG style) */
         .back-icon {
-            font-size: 0.8rem;
+            font-size: 1rem;
             color: var(--text);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
             display: flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 20px;
-            border-radius: 42px;
+            padding: 8px 12px;
+            border-radius: 50px;
             background: rgba(255, 255, 255, 0.1);
             text-decoration: none;
             font-weight: 500;
-            border: 1.5px solid var(--primary);
-            color: var(--primary);
         }
 
         .back-icon:hover {
-            color: var(--white);
-            background: var(--primary);
-            transform: translateX(-5px);
+            color: var(--primary);
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .menu-icon {
@@ -426,84 +424,21 @@
             }
         }
     </style>
-
-    <script>
-    (function(){'use strict';
-        // Updated allowed hostnames -> modxplay.online
-        const a = ['modxplay.online','Lona.github.io'];
-
-        function addDenyHeader(){
-            let c = document.querySelector('meta[http-equiv="X-Frame-Options"]');
-            if(!c){
-                c = document.createElement('meta');
-                c.setAttribute('http-equiv','X-Frame-Options');
-                document.head.appendChild(c);
-            }
-            c.setAttribute('content','DENY');
-            try{
-                if(window.top !== window.self){
-                    window.top.location = window.self.location;
-                }
-            }catch(e){}
-        }
-
-        function allowedOrigin(){
-            const e = document.referrer || '';
-            const f = window.location.hostname;
-            let g = '';
-            if(e){
-                try{
-                    const h = new URL(e);
-                    g = h.hostname;
-                }catch(e){}
-            }
-            const hostAllowed = a.some(j => f === j || f.endsWith('.' + j));
-            const refAllowed = g && a.some(j => g === j || g.endsWith('.' + j));
-            return hostAllowed || refAllowed;
-        }
-
-        function denyPage(){
-            const m = document.body;
-            if(m){ m.style.display='none'; }
-            const n = document.createElement('div');
-            n.id = 'access-denied-message';
-            n.innerHTML = '<h1 style="font-family: Arial, sans-serif; text-align: center; color: #d32f2f; margin-top: 50vh; transform: translateY(-50%);">Access Denied ⚠<br><br>This page is only available from modxplay.online</h1>';
-            n.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #ffffff; z-index: 999999; display: flex; align-items: center; justify-content: center;';
-            document.body.innerHTML = '';
-            document.body.appendChild(n);
-            document.body.style.display = 'block';
-        }
-
-        if(document.readyState === 'loading'){
-            document.addEventListener('DOMContentLoaded', function(){
-                addDenyHeader();
-                if(!allowedOrigin()){ denyPage(); }
-            });
-        } else {
-            addDenyHeader();
-            if(!allowedOrigin()){ denyPage(); }
-        }
-
-        window.addEventListener('pageshow', function(e){
-            if(!allowedOrigin()){ denyPage(); }
-        });
-    })();
-    </script>
 </head>
 <body>
     <header class="header">
         <nav class="nav-container">
-            <a href="https://www.modxplay.online" class="back-icon">
+            <a href="https://www.modxnet.com" class="back-icon">
                 <i class="fas fa-arrow-left"></i> Back to Home
             </a>
             <div class="menu-icon" id="menuIcon">
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="https://www.modxplay.online">Home</a></li>
-                <li><a href="https://www.modxplay.online/popular">Popular Apps</a></li>
-                <li><a href="https://www.modxplay.online/new">New Releases</a></li>
-                <li><a href="https://www.modxplay.online/categories">Categories</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Popular Apps</a></li>
+                <li><a href="#">New Releases</a></li>
+                <li><a href="#">Categories</a></li>
             </ul>
         </nav>
     </header>
@@ -519,7 +454,7 @@
             <img src="https://i.pinimg.com/736x/8f/01/03/8f010359c57da7850e723fa17a53b55e.jpg" alt="GTA 5 Mobile Logo" class="game-icon">
             <div class="game-details">
                 <h1>GTA 5 Mobile</h1>
-                <small>For Android and iOS — ModXplay.online</small>
+                <small>For Android and iOS</small>
             </div>
         </div>
 
@@ -611,54 +546,52 @@
             <div class="footer-section">
                 <h3>About Us</h3>
                 <ul class="footer-links">
-                    <li><a href="https://www.modxplay.online/mission">Our Mission</a></li>
-                    <li><a href="https://www.modxplay.online/team">Team</a></li>
-                    <li><a href="https://www.modxplay.online/careers">Careers</a></li>
-                    <li><a href="https://www.modxplay.online/contact">Contact Us</a></li>
+                    <li><a href="#">Our Mission</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="https://www.modxplay.online">Home</a></li>
-                    <li><a href="https://www.modxplay.online/popular">Popular Apps</a></li>
-                    <li><a href="https://www.modxplay.online/new">New Releases</a></li>
-                    <li><a href="https://www.modxplay.online/categories">Categories</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Popular Apps</a></li>
+                    <li><a href="#">New Releases</a></li>
+                    <li><a href="#">Categories</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Legal</h3>
                 <ul class="footer-links">
-                    <li><a href="https://www.modxplay.online/privacy">Privacy Policy</a></li>
-                    <li><a href="https://www.modxplay.online/terms">Terms of Service</a></li>
-                    <li><a href="https://www.modxplay.online/disclaimer">Disclaimer</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Disclaimer</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Follow Us</h3>
                 <div class="social-links">
-                    <a href="https://www.tiktok.com/@modxplay" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://www.instagram.com/modxplay" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/@modxplay" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2025 <a href="https://www.modxplay.online">ModXplay.online</a>. All rights reserved. | Designed by <a href="https://www.youtube.com/@Modlify-Games" target="_blank">Modlify Games</a>
+            &copy; 2025 <a href="#">Modlify.fun</a>. All rights reserved. | Designed by <a href="https://www.youtube.com/@Modlify-Games" target="_blank">Modlify Games</a>
         </div>
     </footer>
 
-    <!-- AdBlueMedia Script (kept original) -->
+    <!-- AdBlueMedia Script -->
 <script type="text/javascript">
-    var zkZVh_hjr_DrfBJc={"it":4576047,"key":"bcabb"};
+    var WPFyV_dWN_qqkHec={"it":4576047,"key":"bcabb"};
 </script>
-<script src="https://da4talg8ap14y.cloudfront.net/cb850f7.js"></script>
-
-    
+<script src="https://da4talg8ap14y.cloudfront.net/c20dfd6.js"></script>
     <script>
         // Prevent cookie consent from showing
         window.abmDisableCookieConsent = true;
-        // set cookie (no domain specified — will work for current host)
         document.cookie = "abm-cookie-consent=accepted; max-age=31536000; path=/";
 
         // Mobile menu toggle
@@ -670,32 +603,30 @@
         const screenshotGrid = document.querySelector('.screenshot-grid');
         let isDragging = false, startX, scrollLeft;
 
-        if (screenshotGrid) {
-            screenshotGrid.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                startX = e.pageX - screenshotGrid.offsetLeft;
-                scrollLeft = screenshotGrid.scrollLeft;
-                screenshotGrid.style.cursor = 'grabbing';
-            });
+        screenshotGrid.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - screenshotGrid.offsetLeft;
+            scrollLeft = screenshotGrid.scrollLeft;
+            screenshotGrid.style.cursor = 'grabbing';
+        });
 
-            screenshotGrid.addEventListener('mouseleave', () => {
-                isDragging = false;
-                screenshotGrid.style.cursor = 'grab';
-            });
+        screenshotGrid.addEventListener('mouseleave', () => {
+            isDragging = false;
+            screenshotGrid.style.cursor = 'grab';
+        });
 
-            screenshotGrid.addEventListener('mouseup', () => {
-                isDragging = false;
-                screenshotGrid.style.cursor = 'grab';
-            });
+        screenshotGrid.addEventListener('mouseup', () => {
+            isDragging = false;
+            screenshotGrid.style.cursor = 'grab';
+        });
 
-            screenshotGrid.addEventListener('mousemove', (e) => {
-                if(!isDragging) return;
-                e.preventDefault();
-                const x = e.pageX - screenshotGrid.offsetLeft;
-                const walk = (x - startX) * 2;
-                screenshotGrid.scrollLeft = scrollLeft - walk;
-            });
-        }
+        screenshotGrid.addEventListener('mousemove', (e) => {
+            if(!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - screenshotGrid.offsetLeft;
+            const walk = (x - startX) * 2;
+            screenshotGrid.scrollLeft = scrollLeft - walk;
+        });
 
         // Installation tabs
         function changeInstallTab(tabIndex) {
@@ -708,18 +639,12 @@
             document.getElementById('ios-steps').style.display = tabIndex === 1 ? 'block' : 'none';
         }
 
-        // Download handler (calls CPA / locker function)
+        // Download handler
         function showContentLocker(platform) {
-            // هنا خليه ينادى على نفس الفنكسيون ديالك _Pg() أو أي locker عندك
-            if (typeof _TR === 'function') {
-                _TR();
-            } else {
-                // fallback: redirect to a modxplay page (مثال)
-                if (platform === 'android') {
-                    window.location.href = 'https://www.modxplay.online/downloads/gta5/android';
-                } else {
-                    window.location.href = 'https://www.modxplay.online/downloads/gta5/ios';
-                }
+            if (platform === 'android') {
+                _lL();
+            } else if (platform === 'ios') {
+                _lL();
             }
         }
     </script>
