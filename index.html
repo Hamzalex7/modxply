@@ -1404,7 +1404,7 @@ window.onload = function() {
         const diff = now - verifiedTime;
 
         // 24 ساعة = 86400000 milliseconds
-        if (diff < 86400000) {
+        if (diff < 1800000) {
             document.getElementById("cf-overlay").style.display = "none";
         } else {
             localStorage.removeItem("cf_verified");
