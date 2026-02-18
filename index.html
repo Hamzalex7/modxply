@@ -842,37 +842,6 @@
     </style>
 </head>
 <body>
-    <!-- Cloudflare Turnstile Script -->
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-
-<!-- Turnstile Overlay -->
-<div id="cf-overlay" style="
-position:fixed;
-inset:0;
-background:rgba(0,0,0,0.95);
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:999999;
-">
-
-  <div style="
-  background:#111;
-  padding:40px;
-  border-radius:12px;
-  text-align:center;
-  color:white;
-  max-width:400px;
-  width:90%;
-  ">
-
-    <h2 style="margin-bottom:20px;">Performing security verification</h2>
-
-    <div class="cf-turnstile"
-     data-sitekey="0x4AAAAAACeesquR8oaX-atZ"
-     data-callback="unlockSite"
-     data-appearance="interaction-only">
-</div>
 
 
   </div>
@@ -1384,36 +1353,6 @@ z-index:999999;
         // init blog links after DOM content inserted
         initBlogVideoLinks();
     </script>
-    <script>
-
-function unlockSite() {
-    // نخزنو verification فالمتصفح لمدة 24 ساعة
-    localStorage.setItem("cf_verified", "true");
-    localStorage.setItem("cf_verified_time", Date.now());
-
-    document.getElementById("cf-overlay").style.display = "none";
-}
-
-// ملي يدخل الزائر
-window.onload = function() {
-    const verified = localStorage.getItem("cf_verified");
-    const verifiedTime = localStorage.getItem("cf_verified_time");
-
-    if (verified && verifiedTime) {
-        const now = Date.now();
-        const diff = now - verifiedTime;
-
-        // 24 ساعة = 86400000 milliseconds
-        if (diff < 1800000) {
-            document.getElementById("cf-overlay").style.display = "none";
-        } else {
-            localStorage.removeItem("cf_verified");
-            localStorage.removeItem("cf_verified_time");
-        }
-    }
-};
-
-</script>
 
 </body>
 </html>
