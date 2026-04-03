@@ -7,24 +7,16 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     
-    <title>DownAPK.online - Free MOD APK Games & Apps Download</title>
-    <meta name="description" content="Download the latest MOD APK games and premium apps for free. Get unlimited money, unlocked features, and ad-free versions at DownAPK.online">
-    <meta name="keywords" content="mod apk, free games, android apps, premium apk, mod games, downapk">
+    <title>ModXplay - Free MOD APK Games Download</title>
+    <meta name="description" content="Download the latest MOD APK games for free. Get unlimited money, unlocked features at ModXplay.online">
+    <meta name="keywords" content="mod apk, free games, android games, mod games">
     
-    <link rel="canonical" href="https://downapk.online/">
+    <link rel="canonical" href="https://modxplay.online/">
     
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://downapk.online/">
-    <meta property="og:title" content="DownAPK.online - Free MOD APK Games & Apps">
-    <meta property="og:description" content="Download the latest MOD APK games and premium apps for free.">
-    <meta property="og:site_name" content="DownAPK.online">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://downapk.online/">
-    <meta name="twitter:title" content="DownAPK.online - Free MOD APK Games & Apps">
-    <meta name="twitter:description" content="Download the latest MOD APK games and premium apps for free.">
+    <meta property="og:url" content="https://modxplay.online/">
+    <meta property="og:title" content="ModXplay - Free MOD APK Games">
+    <meta property="og:description" content="Download the latest MOD APK games for free.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,10 +56,7 @@
             --border: hsl(217, 33%, 18%);
         }
         
-        html {
-            transition: background-color 0.3s ease, color 0.3s ease;
-            scroll-behavior: smooth;
-        }
+        html { transition: background-color 0.3s ease, color 0.3s ease; scroll-behavior: smooth; }
         
         body {
             font-family: 'Poppins', Arial, sans-serif;
@@ -82,14 +71,13 @@
         img { max-width: 100%; height: auto; display: block; }
         button { cursor: pointer; border: none; background: none; font-family: inherit; }
         
-        /* Container */
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 1rem;
         }
         
-        /* Header */
+        /* Header (same as before) */
         .header {
             position: sticky;
             top: 0;
@@ -221,28 +209,6 @@
             transform: translateY(-50%);
             color: var(--muted-foreground);
         }
-        
-        .mobile-nav {
-            display: none;
-            padding: 1rem 0;
-            border-top: 1px solid var(--border);
-        }
-        
-        .mobile-nav.active { display: block; }
-        
-        @media (min-width: 768px) {
-            .mobile-nav { display: none !important; }
-        }
-        
-        .mobile-nav a {
-            display: block;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: background 0.2s;
-        }
-        
-        .mobile-nav a:hover { background: var(--muted); }
         
         /* Hero Carousel */
         .hero-section { padding: 2rem 0; }
@@ -578,27 +544,6 @@
             background: var(--border);
         }
         
-        /* Categories */
-        .categories-wrap {
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-        
-        .category-pill {
-            display: inline-block;
-            background: var(--secondary);
-            color: white;
-            padding: 0.5rem 0.75rem;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 500;
-            margin: 4px;
-            transition: opacity 0.2s;
-        }
-        
-        .category-pill:hover { opacity: 0.9; }
-        
         /* Blog Grid */
         .blog-grid {
             display: grid;
@@ -640,7 +585,6 @@
         
         .blog-card-img-wrapper { overflow: hidden; position: relative; }
         
-        /* play overlay */
         .play-overlay {
             position: absolute;
             inset: 0;
@@ -650,6 +594,7 @@
             background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.3));
             transition: background 0.2s;
         }
+        
         .play-button {
             width: 72px;
             height: 72px;
@@ -661,11 +606,6 @@
             color: white;
             font-size: 28px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-        }
-        .play-button:after {
-            content: '';
-            width: 0;
-            height: 0;
         }
         
         .blog-card-content { padding: 1rem; }
@@ -795,7 +735,6 @@
         ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { opacity: 0.8; }
         
-        /* SVG Icons */
         .icon { width: 20px; height: 20px; }
         .icon-sm { width: 16px; height: 16px; }
 
@@ -839,30 +778,153 @@
             display: block;
         }
 
+        /* Sidebar Overlay (الضبابة) */
+        .sidebar-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Sidebar Menu (القائمة الجانبية) */
+        .sidebar-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 280px;
+            background: #0f172a;
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            color: #f8fafc;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar-menu.active {
+            transform: translateX(0);
+        }
+
+        /* Header ديال القائمة */
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: 'Kanit', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .sidebar-close {
+            color: #94a3b8;
+            background: rgba(255, 255, 255, 0.1);
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+
+        .sidebar-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        /* المحتوى والروابط */
+        .sidebar-content {
+            padding: 1.5rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .sidebar-section {
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-section-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #64748b;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.85rem 1rem;
+            color: #cbd5e1;
+            border-radius: 12px;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-link:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+        }
+
+        .sidebar-link.active {
+            background: linear-gradient(90deg, rgba(59, 130, 246, 0.15) 0%, transparent 100%);
+            color: white;
+            position: relative;
+        }
+
+        .sidebar-link.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 60%;
+            background: var(--primary);
+            border-radius: 0 4px 4px 0;
+        }
     </style>
 </head>
 <body>
 
-
-  </div>
-</div>
-
-    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-inner">
                 <a href="/" class="logo">
                     <div class="logo-icon" style="background:transparent;padding:0;">
-    <img src="https://i.ibb.co/gbsY945Q/Black-and-Green-Illustrative-E-Sports-Gaming-Logo-2-removebg.png" alt="DownAPK Logo" style="width:40px;height:40px;object-fit:contain;">
-</div>
+                        <img src="https://i.ibb.co/gbsY945Q/Black-and-Green-Illustrative-E-Sports-Gaming-Logo-2-removebg.png" alt="ModXplay Logo" style="width:40px;height:40px;object-fit:contain;">
+                    </div>
                     <span class="logo-text">Mod<span>Xplay</span></span>
                 </a>
                 
                 <nav class="nav-desktop">
                     <a href="/" class="nav-link">Home</a>
                     <a href="#games" class="nav-link">Games</a>
-                    <a href="#apps" class="nav-link">Apps</a>
-                    <a href="#blog" class="nav-link">Blog</a>
+                    <a href="#blog" class="nav-link">How To Unlock</a>
                 </nav>
                 
                 <div class="header-actions">
@@ -882,22 +944,68 @@
             
             <div class="search-bar" id="searchBar">
                 <div class="search-input-wrapper">
-                    <input type="text" class="search-input" id="searchInput" placeholder="Search apps, games...">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search games...">
                     <svg class="icon search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
                 </div>
             </div>
-            
-            <nav class="mobile-nav" id="mobileNav">
-                <a href="/">Home</a>
-                <a href="#games">Games</a>
-                <a href="#apps">Apps</a>
-                <a href="#blog">How To Unlock</a>
-            </nav>
         </div>
     </header>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <nav class="sidebar-menu" id="sidebarMenu">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <svg class="icon" fill="var(--primary)" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span>modxplay.online</span>
+            </div>
+            <button class="sidebar-close" id="sidebarClose">✕</button>
+        </div>
+        
+        <div class="sidebar-content">
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">MENUS</div>
+                <a href="/" class="sidebar-link">
+                    <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg> 
+                    Home
+                </a>
+                <a href="#games" class="sidebar-link active">
+                    <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/></svg> 
+                    Games
+                </a>
+                <a href="#" class="sidebar-link">
+                    <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> 
+                    Trending
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">PLATFORMS</div>
+                <a href="#" class="sidebar-link">
+                    <svg class="icon-sm" fill="currentColor" viewBox="0 0 24 24"><path d="M17.523 15.3414c-.0112-2.1852 1.7824-3.2325 1.865-3.2842-1.0116-1.483-2.5855-1.696-3.1495-1.7224-1.3364-.136-2.607.7896-3.2865.7896-.682 0-1.722-.7676-2.836-.7455-1.442.022-2.776.842-3.518 2.1408-1.503 2.617-.384 6.495 1.086 8.625.72 1.0425 1.5645 2.2036 2.6845 2.164 1.077-.042 1.484-.6986 2.784-.6986 1.303 0 1.688.7008 2.798.68 1.134-.02 1.865-1.07 2.583-2.117.83-1.214 1.173-2.392 1.192-2.454-.026-.01-2.292-.882-2.302-3.376zM14.686 4.9004c.594-.72 1-1.722.89-2.722-.862.036-1.92.576-2.528 1.288-.544.636-.983 1.65-.86 2.636.96.074 1.905-.48 2.498-1.202z"/></svg> 
+                    iOS
+                </a>
+                <a href="#" class="sidebar-link">
+                    <svg class="icon-sm" fill="currentColor" viewBox="0 0 24 24"><path d="M17.523 11.234l-3.264-5.632c-.183-.316-.52-.512-.885-.512h-6.748c-.365 0-.702.196-.885.512l-3.264 5.632c-.183.316-.183.708 0 1.024l3.264 5.632c.183.316.52.512.885.512h6.748c.365 0 .702-.196.885-.512l3.264-5.632c.183-.316.183-.708 0-1.024z"/></svg> 
+                    Android
+                </a>
+                <a href="#" class="sidebar-link">
+                    <svg class="icon-sm" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.131H0V3.449zm10.5 8.98V1.98L24 0v11.23h-13.5zM0 12.4h9.75v9.13L0 20.19v-7.79zm10.5.2h13.5V24l-13.5-1.85v-9.55z"/></svg> 
+                    Windows
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">SUPPORT</div>
+                <a href="#" class="sidebar-link">
+                    <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> 
+                    Support & Home
+                </a>
+            </div>
+        </div>
+    </nav>
     
     <main>
-        <!-- Hero Carousel -->
         <section class="hero-section">
             <div class="container">
                 <div class="carousel-wrapper">
@@ -905,7 +1013,7 @@
                         <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://leclaireur.fnac.com/wp-content/uploads/2022/01/gta-5.jpeg');">
                             <div class="slide-content">
                                 <span class="slide-category">Action</span>
-                                <h2 class="slide-title">GTA: V MOBILE </h2>
+                                <h2 class="slide-title">GTA: V MOBILE</h2>
                                 <a href="#" class="download-btn">Download <span class="download-btn-icon"><svg class="icon-sm" fill="currentColor" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></span></a>
                             </div>
                         </div>
@@ -957,7 +1065,6 @@
             </div>
         </section>
         
-        <!-- Games Section -->
         <section class="section" id="games">
             <div class="container">
                 <h2 class="section-head">
@@ -967,86 +1074,13 @@
                         </div>
                         <span>Latest Games</span>
                     </div>
-                    <a href="#" class="btn-navy">All <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+                    <a href="#" class="btn-navy">All Games <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
                 </h2>
                 
                 <div class="game-grid" id="gamesGrid"></div>
-                
-                <div class="categories-wrap">
-                    <h3 class="section-head" style="width: 100%;">
-                        <div class="section-head-left">
-                            <div class="section-icon" style="background: var(--gradient-blue);">
-                                <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="15" x2="15.01" y1="13" y2="13"/><line x1="18" x2="18.01" y1="11" y2="11"/><rect width="20" height="12" x="2" y="6" rx="2"/></svg>
-                            </div>
-                            <span>Games - Categories</span>
-                        </div>
-                        <a href="#" class="btn-navy">All <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-                    </h3>
-                    <div style="display: flex; flex-wrap: wrap;">
-                        <a href="#" class="category-pill">Action</a>
-                        <a href="#" class="category-pill">Adventure</a>
-                        <a href="#" class="category-pill">Games</a>
-                        <a href="#" class="category-pill">Puzzle</a>
-                        <a href="#" class="category-pill">Racing</a>
-                    </div>
-                </div>
             </div>
         </section>
         
-        <!-- Apps Section -->
-        <section class="section" id="apps">
-            <div class="container">
-                <h2 class="section-head">
-                    <div class="section-head-left">
-                        <div class="section-icon" style="background: var(--gradient-purple);">
-                            <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
-                        </div>
-                        <span>Latest Apps</span>
-                    </div>
-                    <a href="#" class="btn-navy">All <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-                </h2>
-                
-                <div class="game-grid" id="appsGrid"></div>
-                
-                <div class="categories-wrap">
-                    <h3 class="section-head" style="width: 100%;">
-                        <div class="section-head-left">
-                            <div class="section-icon" style="background: var(--gradient-purple);">
-                                <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
-                            </div>
-                            <span>Apps - Categories</span>
-                        </div>
-                        <a href="#" class="btn-navy">All <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-                    </h3>
-                    <div style="display: flex; flex-wrap: wrap;">
-                        <a href="#" class="category-pill">Apps</a>
-                        <a href="#" class="category-pill">Gamaes</a>
-                        <a href="#" class="category-pill">Communication</a>
-                        <a href="#" class="category-pill">Entertainment</a>
-                        <a href="#" class="category-pill">Photography</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Premium Section -->
-        <section class="section">
-            <div class="container">
-                <h2 class="section-head">
-                    <div class="section-head-left">
-                        <div class="section-icon" style="background: var(--gradient-red);">
-                            <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
-                        </div>
-                        <span>Premium Apps & Modded Mobile Versions Games</span>
-                    </div>
-                    <a href="#" class="btn-navy">All <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-                </h2>
-                
-                <div class="game-grid" id="premiumGrid"></div>
-            </div>
-        </section>
-        
-        <!-- Blog Section (How To Unlock The Games) -->
         <section class="section" id="blog">
             <div class="container">
                 <h2 class="section-head">
@@ -1056,16 +1090,14 @@
                         </div>
                         <span>How To Unlock The Games</span>
                     </div>
-                    <a href="https://www.youtube.com/embed/hhAvHVkNi5w?si=NqftXyNEEPg1CANZ" class="btn-navy">More <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+                    <a href="#" class="btn-navy">More <svg class="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
                 </h2>
                 
-                <!-- Only one post remains here. Clicking it opens a modal YouTube player -->
                 <div class="blog-grid" id="blogGrid"></div>
             </div>
         </section>
     </main>
     
-    <!-- Video Modal -->
     <div id="videoModal" class="video-modal hidden" aria-hidden="true">
         <div class="video-modal-inner">
             <button id="videoModalClose" class="video-modal-close" aria-label="Close video">✕</button>
@@ -1073,7 +1105,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-inner">
@@ -1090,7 +1121,6 @@
         </div>
     </footer>
     
-    <!-- Bottom Navigation -->
     <nav class="bottom-nav">
         <div class="bottom-nav-inner">
             <a href="/" class="bottom-nav-item active">
@@ -1100,10 +1130,6 @@
             <a href="#games" class="bottom-nav-item">
                 <svg class="icon" fill="none" stroke="hsl(11, 100%, 50%)" viewBox="0 0 24 24"><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="15" x2="15.01" y1="13" y2="13"/><line x1="18" x2="18.01" y1="11" y2="11"/><rect width="20" height="12" x="2" y="6" rx="2"/></svg>
                 <span>Games</span>
-            </a>
-            <a href="#apps" class="bottom-nav-item">
-                <svg class="icon" fill="none" stroke="hsl(276, 100%, 50%)" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
-                <span>Apps</span>
             </a>
             <a href="#blog" class="bottom-nav-item">
                 <svg class="icon" fill="none" stroke="hsl(36, 100%, 50%)" viewBox="0 0 24 24"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
@@ -1118,7 +1144,7 @@
     </nav>
     
     <script>
-        // Data (games/apps/premium unchanged except blogPosts)
+        // Data
         const games = [
           {title:"My Voice Zoo Mobile",category:"Casual",version:"v3.01",size:"150 MB",image:"https://apktodo.io/uploads/2025/12/my-voice-zoo-icon.jpg",url:"https://modxplay.online/My Voice Zoo Mobile/"},
             { title: "BeamNG Drive Mobile™", category: "Cars", version: "v1.0", size: "Varies", image: "https://avatars.githubusercontent.com/u/6404024?s=280&v=4", isMobile: true, isMod: true, url: "https://modxplay.online/BeamNG Dirve Mobile" },
@@ -1126,51 +1152,28 @@
             { title: "Red Dead Redemption NETFLIX", category: "Adventure", version: "v1.50", size: "2.5 GB", image: "https://mingapks.com/wp-content/uploads/2025/12/480-red-dead-redemption-netflix.webp", isMod: true, isUpdate: true, url: "https://modxplay.online/Red Dead Redemption Mod Apk" },
             { title: "Assetto Corsa Moble", category: "Racing", version: "v8.9.0", size: "1.8 GB", image: "https://i.postimg.cc/mgStnz0K/Picsart-25-10-16-14-24-02-706.jpg", isMod: true, url: "https://modxplay.online/Assetto Corsa Mobile" },
              { title: "Traffic Racer", category: "Cars", version: "v1.42", size: "850 MB", image: "https://apktodo.io/uploads/2025/3/traffic-racer-russian-village-icon.jpg", isMod: true, url: "https://modxplay.online/Traffic Racer" },
-            { title: "CarX Street Mod Apk", category: "Cars", version: "v1.5.2", size: "2.6 GB", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4pqJlpezWAKhl0bwwWy1GIc_zVOGXjHvz9Q&s", isMod: true, url: "https://modxplay.online/CarX Street Mod Apk" },
+            { title: "CarX Street Mod Apk", category: "Cars", version: "v1.5.2", size: "2.6 GB", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9cR4pqJlpezWAKhl0bwwWy1GIc_zVOGXjHvz9Q&s", isMod: true, url: "https://modxplay.online/CarX Street Mod Apk" },
             { title: "Car Parking Multiplayer 2", category: "Cars", version: "v1.42", size: "2.3 GB", image: "https://play-lh.googleusercontent.com/1DhZDejbhLxExB4o4WyhtcIrpO5s4BaWqbk3nsjl64TM9nwO3iCQqpV18ZO3PyklnA=w240-h480-rw", url: "https://modxplay.online/Car Parking Multiplayer" },
              { title: "Tomb Raider™", category: "Action", version: "v1.0", size: "Varies", image: "https://mingapks.com/wp-content/uploads/2026/01/489-tomb-raider.webp", isUpdate: true, url: "https://downapk.online/Coming Soon ..." },
             { title: "SnowRunner Mobile", category: "Heavy Trucks", version: "v1.0.25", size: "2.2 GB", image: "https://cdn.focus-home.com/fhi-fastforward-admin/resources/games/snowrunner/images/10042025_9ea4150ca57244068421faecdbc3215b.jpeg", isMod: true, url: "/poppy-playtime-chapter-3" },
             { title: "The Crew Motorfest Mobile", category: "Open world", version: "v1.4.5", size: "3.1 GB", image: "https://i.pinimg.com/736x/4d/cc/24/4dcc245b74b92bfcf3d447eafc39a98b.jpg", url: "/streets-of-rage-4" },
-            { title: "Grand Theft Auto V Mobile", category: "", version: "v8.9.0", size: "1.8 GB", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGD7M8gzVQtpayN0kdH2m8FbHnVhlf7Remyg&s",isMobile: true, url: "https://downapk.online/Coming Soon ..." },
-            //{ title: "Little Nightmares", category: "Adventure", version: "v144", size: "920 MB", image: "https://mingapks.com/wp-content/uploads/2025/10/little-nightmares-thumbnail.png", url: "/little-nightmares" },
+            { title: "Grand Theft Auto V Mobile", category: "", version: "v8.9.0", size: "1.8 GB", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9cRGD7M8gzVQtpayN0kdH2m8FbHnVhlf7Remyg&s",isMobile: true, url: "https://downapk.online/Coming Soon ..." },
             { title: "Hollow Knight", category: "Action", version: "v22.10", size: "914 MB", image: "https://images.sftcdn.net/images/t_app-icon-m/p/b0bb283f-9192-4104-ae0f-ac6f274a360e/173199076/hollow-knight-silksong-download-Hollow-Knight-Silksong.jpg", isMod: true, url: "https://downapk.online/Coming Soon ..." },
-            { title: "Euro Truck Simulator2 Mobile", category: "Trucks", version: "v1.1.1a", size: "3.2 GB", image: "https://i.pinimg.com/736x/bf/9a/48/bf9a48c60a44f0fb95e68cccc41bff47.jpg", isMobile: true, url: "https://modxplay.online/ForzaHorizon4 Mobile" },
-            //{ title: "SpongeBob - The Cosmic Shake", category: "Action", version: "v1.1.2", size: "3.9 GB", image: "https://mingapks.com/wp-content/uploads/2025/10/434-spongebob-the-cosmic-shake.png", isMod: true, url: "/spongebob-the-cosmic-shake" },
-            //{ title: "Mortal Kombat Unchained", category: "Fighting", version: "v1.0", size: "1.36 GB", image: "https://assets-prd.ignimgs.com/2021/02/18/mortal-kombat-ver2-button-1613673221799.jpg", isMod: true, url: "/mortal-kombat-unchained" },
-            //{ title: "NARUTO: Ultimate Ninja STORM", category: "Action", version: "v1.2.9", size: "3.2 GB", image: "https://mingapks.com/wp-content/uploads/2025/09/226-naruto-ultimate-ninja-storm.png", isUpdate: true, url: "/naruto-ultimate-ninja-storm" }
+            { title: "Euro Truck Simulator2 Mobile", category: "Trucks", version: "v1.1.1a", size: "3.2 GB", image: "https://i.pinimg.com/736x/bf/9a/48/bf9a48c60a44f0fb95e68cccc41bff47.jpg", isMobile: true, url: "https://modxplay.online/ForzaHorizon4 Mobile" }
         ];
         
-        const apps = [
-            { title: "TikTok Premium", category: "Social", version: "v40.5.16", size: "220 MB", image: "https://play-lh.googleusercontent.com/LdBITldj-tJxqLm-CsWSbnt4BMo2gk53cgM7mWIL-zn44m1ywLyQgxRsHKqp8r0qceXs", isMod: true, url: "https://downapk.online/Coming Soon ..." },
-            { title: "Instagram", category: "Social", version: "v340.0", size: "180 MB", image: "https://play-lh.googleusercontent.com/VRMWkE5p3CkWhJs6nv-9ZsLAs1QOg5ob1_3qg-rckwYW7yp1fMrYZqnEFpk0IoVP4LM", isMod: true, url: "https://downapk.online/Coming Soon ..." },
-            { title: "Spotify Premium", category: "Music", version: "v8.9.42", size: "85 MB", image: "https://play-lh.googleusercontent.com/cShys-AmJ93dB0SV8kE6Fl5eSaf4-qMMZdwEDKI5VEmKAXfzOqbiaeAsqqrEBCTdIEs", isMod: true, url: "https://downapk.online/Coming Soon ..." },
-            { title: "YouTube Premium", category: "Entertainment", version: "v19.45", size: "150 MB", image: "https://play-lh.googleusercontent.com/lMoItBgdPPVDJsNOVtP26EKHePkwBg-PkuY9NOrc-fumRtTFP4XhpUNk_22syN4Datc", isMod: true, url: "https://downapk.online/Coming Soon ..." },
-            { title: "Photo Studio PRO", category: "Photography", version: "v2.8.2", size: "120 MB", image: "https://play-lh.googleusercontent.com/3UojVLVXeXnz6fHg76Od05LxALKOOhw4nDR8hGY3qtoW3UsuRHdpZB9lX8goUl7q3UE", isMod: true, url: "https://downapk.online/Coming Soon ..." },
-            { title: "Netflix", category: "Entertainment", version: "v8.115", size: "95 MB", image: "https://play-lh.googleusercontent.com/TBRwjS_qfJCSj1m7zZB93FnpJM5fSpMA_wUlFDLxWAb45T9RmwBvQd5cWR5viJJOhkI", isMod: true, url: "https://downapk.online/Coming Soon ..." }
-        ];
-        
-        const premium = [
-            //{ title: "Photo Studio PRO", category: "Paid", version: "v2.8.2", size: "120 MB", image: "https://play-lh.googleusercontent.com/3UojVLVXeXnz6fHg76Od05LxALKOOhw4nDR8hGY3qtoW3UsuRHdpZB9lX8goUl7q3UE", isMod: true, url: "https://downapk.online/Coming Soon ..." },
-            { title: "NARUTO: Ultimate Ninja STORM", category: "Paid", version: "v1.2.9", size: "3.2 GB", image: "https://mingapks.com/wp-content/uploads/2025/09/226-naruto-ultimate-ninja-storm.png", isUpdate: true, url: "https://downapk.online/Coming Soon ..." },
-            //{ title: "Resident Evil 4", category: "Paid", version: "v1.0", size: "8.5 GB", image: "https://play-lh.googleusercontent.com/5Z-KRFR6gE3lX9d8W8kHJvAEVEJGEYHU9W95nRDLj4E_fO8EDALMEq0O9oQC8O9s9dA", isMod: true, url: "/resident-evil-4" },
-            { title: "GTA: San Andreas", category: "Paid", version: "v1.86", size: "2.8 GB", image: "https://hardzone.es/app/uploads-hardzone.es/2019/09/grand_theft_auto_san_andreas.jpg", isMod: true, url: "/gta-san-andreas-netflix" },
-            { title: "Hitman: Absolution", category: "Paid", version: "v1.0", size: "3.5 GB", image: "https://mingapks.com/wp-content/uploads/2025/10/hitman-absolution-banner.jpg", url: "/hitman-absolution" },
-            { title: "Bully: Anniversary Edition", category: "Paid", version: "v1.0.0.19", size: "2.4 GB", image: "https://mingapks.com/wp-content/uploads/2025/10/bully-anniversary-edition-banner.jpg", isMod: true, url: "/bully-anniversary-edition" }
-        ];
-        
-        // BLOG POSTS: ONLY ONE post now. It includes a videoId you can replace with the YouTube video id.
         const blogPosts = [
             {
                 title: "How to Unlock the Games — Quick Video Guide",
-                image: "https://img.youtube.com/vi/REPLACE_WITH_VIDEO_ID/maxresdefault.jpg",
+                image: "https://img.youtube.com/vi/mkzM6dJmXwE/maxresdefault.jpg",
                 views: "1.2K",
-                date: "Feb 06, 2026",
-                videoId: "REPLACE_WITH_VIDEO_ID",
-                url: "https://youtu.be/ICJs1CxCRt0?list=RDICJs1CxCRt0"
+                date: "Apr 03, 2026",
+                videoId: "mkzM6dJmXwE",
+                url: "https://youtu.be/mkzM6dJmXwE?si=RFoDDVSOpyOaCxRC"
             }
         ];
         
-        // Render game card
+        // Render functions (same)
         function renderGameCard(item) {
             return `
                 <a href="${item.url}" class="game-card">
@@ -1180,7 +1183,6 @@
                         ${item.isMod ? '<div class="mod-label">Mod</div>' : ''}
                     </div>
                     ${item.isMobile ? '<div class="mod-label">Mobile</div>' : ''}
-                    </div>
                     <div class="game-card-content">
                         <h3 class="game-card-title">${item.title}</h3>
                         <p class="game-card-category">${item.category}</p>
@@ -1200,7 +1202,6 @@
             `;
         }
         
-        // Render blog card (single clickable card that opens modal to play video)
         function renderBlogCard(post) {
             return `
                 <a href="${post.url}" class="blog-card" data-video="${post.videoId}">
@@ -1229,25 +1230,20 @@
             `;
         }
         
-        // Initialize content
+        // Initialize
         document.getElementById('gamesGrid').innerHTML = games.map(renderGameCard).join('');
-        document.getElementById('appsGrid').innerHTML = apps.map(renderGameCard).join('');
-        document.getElementById('premiumGrid').innerHTML = premium.map(renderGameCard).join('');
         document.getElementById('blogGrid').innerHTML = blogPosts.map(renderBlogCard).join('');
         document.getElementById('currentYear').textContent = new Date().getFullYear();
         
-        // Attach click handler to blog card(s) to open video modal
+        // Blog video modal
         function initBlogVideoLinks() {
             document.querySelectorAll('.blog-card').forEach(card => {
                 card.addEventListener('click', function(e) {
-                    // if there's a videoId, open modal; otherwise follow link
                     const videoId = this.dataset.video;
                     if (videoId && videoId !== 'REPLACE_WITH_VIDEO_ID') {
                         e.preventDefault();
                         openVideoModal(videoId);
                     } else {
-                        // No valid videoId yet: open the provided URL in new tab
-                        // Prevent same-tab navigation and open in new tab for user convenience
                         e.preventDefault();
                         const href = this.getAttribute('href');
                         if (href) window.open(href, '_blank');
@@ -1258,11 +1254,9 @@
 
         function openVideoModal(videoId) {
             const iframe = document.getElementById('videoPlayer');
-            // Use embed URL with autoplay
             iframe.src = `https://www.youtube.com/embed/${encodeURIComponent(videoId)}?autoplay=1&rel=0`;
             const modal = document.getElementById('videoModal');
             modal.classList.remove('hidden');
-            modal.setAttribute('aria-hidden', 'false');
         }
 
         function closeVideoModal() {
@@ -1270,16 +1264,14 @@
             iframe.src = '';
             const modal = document.getElementById('videoModal');
             modal.classList.add('hidden');
-            modal.setAttribute('aria-hidden', 'true');
         }
 
-        // Close modal on click outside or close button
         document.getElementById('videoModalClose').addEventListener('click', closeVideoModal);
         document.getElementById('videoModal').addEventListener('click', function(e) {
             if (e.target === this) closeVideoModal();
         });
 
-        // Dark mode
+        // Theme
         function initTheme() {
             const saved = localStorage.getItem('theme');
             if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -1303,21 +1295,42 @@
         document.getElementById('themeToggle').addEventListener('click', toggleTheme);
         document.getElementById('bottomThemeToggle').addEventListener('click', toggleTheme);
         
-        // Mobile menu toggle
-        document.getElementById('menuToggle').addEventListener('click', function() {
-            const mobileNav = document.getElementById('mobileNav');
-            const menuIcon = this.querySelector('.menu-icon');
-            const closeIcon = this.querySelector('.close-icon');
-            mobileNav.classList.toggle('active');
-            menuIcon.classList.toggle('hidden');
-            closeIcon.classList.toggle('hidden');
-        });
+        // Sidebar Menu Logic (New)
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+        const sidebarClose = document.getElementById('sidebarClose');
+
+        function openSidebar() {
+            sidebarMenu.classList.add('active');
+            sidebarOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeSidebar() {
+            sidebarMenu.classList.remove('active');
+            sidebarOverlay.classList.remove('active');
+            document.body.style.overflow = ''; 
+        }
+
+        menuToggle.addEventListener('click', openSidebar);
+        sidebarClose.addEventListener('click', closeSidebar);
+        sidebarOverlay.addEventListener('click', closeSidebar);
         
-        // Search toggle
+        // Search
         document.getElementById('searchToggle').addEventListener('click', function() {
             document.getElementById('searchBar').classList.toggle('active');
         });
         
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            document.querySelectorAll('#gamesGrid .game-card').forEach(card => {
+                const title = card.querySelector('.game-card-title').textContent.toLowerCase();
+                card.style.display = title.includes(query) ? 'block' : 'none';
+            });
+        });
+
         // Carousel
         let currentSlide = 0;
         const totalSlides = 5;
@@ -1334,23 +1347,8 @@
         document.getElementById('carouselNext').addEventListener('click', () => goToSlide(currentSlide + 1));
         dots.forEach((dot, i) => dot.addEventListener('click', () => goToSlide(i)));
         
-        // Auto-advance carousel
         setInterval(() => goToSlide(currentSlide + 1), 5000);
-        
-        // Live search
-        const searchInput = document.getElementById('searchInput');
-        const allCards = () => [...document.querySelectorAll('#gamesGrid .game-card, #appsGrid .game-card, #premiumGrid .game-card')];
 
-        searchInput.addEventListener('input', function() {
-            const query = this.value.toLowerCase();
-            allCards().forEach(card => {
-                const titleEl = card.querySelector('.game-card-title');
-                const title = titleEl ? titleEl.textContent.toLowerCase() : '';
-                card.style.display = title.includes(query) ? 'block' : 'none';
-            });
-        });
-
-        // init blog links after DOM content inserted
         initBlogVideoLinks();
     </script>
 
